@@ -101,7 +101,7 @@ app.get("/oauth", function (req, res) {
         res.send("<h1>OAuth Integration could not complete</h1><p>Unexpected query parameters, ignoring...</p>");
         return;
     }
-    console.log('json.access_token= ',json.access_token);
+    console.log('json.access_token= '+json.access_token);
 
     // Check State 
     // [NOTE] we implement a Security check below, but the State variable can also be leveraged for Correlation purposes
