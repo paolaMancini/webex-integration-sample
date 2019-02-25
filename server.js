@@ -101,7 +101,7 @@ app.get("/oauth", function (req, res) {
         res.send("<h1>OAuth Integration could not complete</h1><p>Unexpected query parameters, ignoring...</p>");
         return;
     }
-    console.log('json.access_token= '+json.access_token);
+    
 
     // Check State 
     // [NOTE] we implement a Security check below, but the State variable can also be leveraged for Correlation purposes
@@ -163,6 +163,7 @@ app.get("/oauth", function (req, res) {
             res.send("<h1>OAuth Integration could not complete</h1><p>Sorry, could not retreive your access token. Try again...</p>");
             return;
         }
+        console.log('json.access_token= '+json.access_token);
         debug("OAuth flow completed, fetched tokens: " + JSON.stringify(json));
         
         // [Optional] Store tokens for future use
